@@ -18,13 +18,16 @@ public interface BookDAO {
   String insert_field = " name, author, price ";
   String select_field = " id, status, " + insert_field;
 
+  // select * from table
   @Select({"select", select_field, "from", table_name})
   List<Book> selectAll();
 
+  // add book
   @Insert({"insert into", table_name, "(", insert_field,
       ") values (#{name},#{author},#{price})"})
   int addBook(Book book);
 
+  // update book
   @Update({"update ", table_name, " set status=#{status} where id=#{id}"})
   void updateBookStatus(@Param("id") int id, @Param("status") int status);
 }

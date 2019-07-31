@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * Created by nowcoder on 2018/08/07 下午2:14
  */
 @Controller
+//@RequestMapping("lib")
 public class LoginController {
 
   @Autowired
